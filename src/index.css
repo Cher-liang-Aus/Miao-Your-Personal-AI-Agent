@@ -1,0 +1,65 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #0D0D12;
+  --bg-2:    #12121B;
+  --bg-3:    #191923;
+  --bg-4:    #22222D;
+  --bg-5:    #2A2A37;
+  --border:    rgba(255,255,255,0.09);
+  --border-2:  rgba(255,255,255,0.14);
+  --border-3:  rgba(255,255,255,0.23);
+  --text-1: #ECEAF4;
+  --text-2: #B0AEBE;
+  --text-3: #858397;
+  --accent:         #5E6AD2;
+  --accent-light:   #7B87DC;
+  --accent-bright:  #8E99E8;
+  --accent-dim:     rgba(94,106,210,0.12);
+  --accent-glow:    rgba(94,106,210,0.22);
+  --accent-border:  rgba(94,106,210,0.32);
+  --accent-text:    #B8C1FF;
+  --green:      #4ADE80;
+  --green-dim:  rgba(74,222,128,0.10);
+  --red:        #F87171;
+  --red-dim:    rgba(248,113,113,0.10);
+  --amber:      #FBBF24;
+  --amber-dim:  rgba(251,191,36,0.10);
+  --r-xs: 5px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-2xl: 28px;
+  --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --ease-out:    cubic-bezier(0.16,1,0.30,1);
+}
+
+html { font-size: 16px; line-height: 1.5; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-1);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar          { width: 4px; height: 4px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: var(--border-2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-3); }
+::selection { background: var(--accent-dim); color: var(--text-1); }
+button { font-family: var(--font); cursor: pointer; border: none; outline: none; }
+input, textarea { font-family: var(--font); }
+
+
+/* A crisp dark arrow with only a faint violet edge glow. */
+@media (pointer: fine) {
+  :root {
+    --cursor-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M4 3v23l6-7 4.5 9.5 3.5-1.7-4.2-9.2H23L4 3z' transform='translate(1 1)' fill='none' stroke='%239580E8' stroke-opacity='.35' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cpath d='M4 3v23l6-7 4.5 9.5 3.5-1.7-4.2-9.2H23L4 3z' fill='%230A0A0D' stroke='%23E7E2FF' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 3;
+  }
+  html, body { cursor: var(--cursor-arrow), auto; }
+  button, a, [role="button"] { cursor: var(--cursor-arrow), pointer; }
+  input, textarea, [contenteditable="true"] { cursor: text; }
+}
