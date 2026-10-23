@@ -204,3 +204,9 @@
 .correctionInput::placeholder{color:#858397}
 .correctionCancel{border-color:rgba(255,255,255,.14);color:#B0AEBE}
 .correctionSubmit{background:linear-gradient(135deg,#737FE1,#5865CA)}
+@media (max-width:680px) {
+  .row { gap:8px; padding:9px 13px; }
+  .bubbleWrap { max-width:88%; }
+  .bubble { padding:10px 13px; font-size:14px; }
+  .avatar { width:26px; height:26px; }
+}

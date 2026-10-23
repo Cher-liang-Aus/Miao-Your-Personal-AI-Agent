@@ -158,3 +158,33 @@
 .planBtn { flex-shrink:0; display:flex; align-items:center; gap:4px; margin-bottom:3px; padding:7px 9px; border:1px solid var(--accent-border); border-radius:8px; color:var(--accent-text); background:var(--accent-dim); font-size:11px; transition:all .16s; }
 .planBtn:hover:not(:disabled) { background:rgba(94,106,210,.22); }
 .planBtn:disabled { opacity:.5; }
+
+/* Responsive chat shell and mobile composer */
+.root { height:100dvh; min-height:0; width:100%; max-width:100vw; }
+.body,.chatColumn,.messageList { min-width:0; min-height:0; }
+@media (max-width:680px) {
+  .header { gap:8px; padding:0 12px; }
+  .headerLeft { min-width:0; gap:7px; }
+  .headerRight { flex-shrink:0; gap:6px; }
+  .homeBtn { margin-right:0; padding:6px 5px; font-size:10px; }
+  .goalRibbon { gap:7px; padding:7px 12px; }
+  .goalKicker { font-size:8px; letter-spacing:.55px; }
+  .goalRibbon button { padding:5px 7px; font-size:9px; }
+  .messageList { padding:16px 0; overscroll-behavior:contain; }
+  .inputArea { padding:10px max(12px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+  .inputWrap { gap:5px; padding-left:11px; }
+  .input { min-width:0; font-size:16px; }
+  .planBtn { padding:7px 8px; font-size:10px; }
+  .memoryBtn { gap:5px; padding:6px 9px; }
+  .memoryBtn span:not(.memoryBadge) { display:none; }
+  .memoryBadge { display:flex; }
+}
+@media (max-width:420px) {
+  .agentStatus { font-size:10px; }
+  .homeBtn span { display:none; }
+  .goalRibbon { flex-wrap:wrap; }
+  .goalTitle { flex:1 1 125px; }
+  .goalRibbon button { margin-left:auto; }
+  .inputHint { display:none; }
+  .planBtn span { display:none; }
+}

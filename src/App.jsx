@@ -108,7 +108,7 @@ export default function App() {
       {phase === 'onboarding' && <Onboarding onComplete={handleOnboardingComplete} />}
       {userProfile && phase === 'home' && <Home userProfile={userProfile} goal={DEMO_GOAL} memoryItems={memoryItems}
         {...sharedPlanProps} onOpenChat={openChat} onManageContext={openContextManager} onAdjustPlan={adjustPlan} />}
-      {userProfile && chatStarted && <div style={{ display: phase === 'chat' ? 'flex' : 'none', height: '100vh' }}>
+      {userProfile && chatStarted && <div style={{ display: phase === 'chat' ? 'flex' : 'none', height: '100dvh', minHeight: 0, width: '100%' }}>
         <Chat userProfile={userProfile} memoryItems={memoryItems} onMemoryAction={handleMemoryAction} goal={DEMO_GOAL}
           {...sharedPlanProps} draftRequest={draftRequest} onDraftRequestConsumed={() => setDraftRequest('')} onHome={() => setPhase('home')}
           openMemoryOnNextChat={openMemoryOnNextChat} onMemoryOpenConsumed={() => setOpenMemoryOnNextChat(false)} />
